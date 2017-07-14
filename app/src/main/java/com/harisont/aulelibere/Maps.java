@@ -16,18 +16,47 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Maps extends AppCompatActivity implements View.OnTouchListener {
+    //variabili globali a caso per testare showCurrentSituation
+    public boolean a3=true;
+    public boolean b3=false;
+    public boolean c3=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        ImageView iv = (ImageView) findViewById (R.id.image);
+        showCurrentSituation();
+
+        ImageView iv = (ImageView) findViewById (R.id.floor3);
         if (iv != null) {
             iv.setOnTouchListener (this);
         }
 
         toast ("Tocca le aule per vedere cosa c'è in programma.");
+    }
+
+    public void showCurrentSituation() {
+        ImageView freea3=(ImageView)findViewById(R.id.ag3);
+        ImageView busya3=(ImageView)findViewById(R.id.ar3);
+        if(a3==true) {
+            freea3.setVisibility(View.VISIBLE);
+        }
+        else busya3.setVisibility(View.VISIBLE);
+
+        ImageView freeb3=(ImageView)findViewById(R.id.bg3);
+        ImageView busyb3=(ImageView)findViewById(R.id.br3);
+        if(b3==true) {
+            freeb3.setVisibility(View.VISIBLE);
+        }
+        else busyb3.setVisibility(View.VISIBLE);
+
+        ImageView freec3=(ImageView)findViewById(R.id.cg3);
+        ImageView busyc3=(ImageView)findViewById(R.id.cr3);
+        if(c3==true) {
+            freec3.setVisibility(View.VISIBLE);
+        }
+        else busyc3.setVisibility(View.VISIBLE);
     }
 
     public boolean onTouch (View v, MotionEvent ev)
@@ -40,16 +69,16 @@ public class Maps extends AppCompatActivity implements View.OnTouchListener {
         final int evY = (int) ev.getY();
         int nextImage = -1;			// resource id of the next image to display
 
-        ImageView imageView = (ImageView) v.findViewById (R.id.image);
+        ImageView imageView = (ImageView) v.findViewById (R.id.floor3);
         if (imageView == null) return false;
 
         Integer tagNum = (Integer) imageView.getTag ();
-        int currentResource = (tagNum == null) ? R.drawable.menouno : tagNum.intValue ();
+        int currentResource = (tagNum == null) ? R.drawable.tre : tagNum.intValue ();
 
         switch (action) {
             case MotionEvent.ACTION_DOWN :
-                if (currentResource == R.drawable.menouno) {
-                    nextImage = R.drawable.menounom;
+                if (currentResource == R.drawable.tre) {
+                    nextImage = R.drawable.trem;
                     handledHere = true;
        /*
        } else if (currentResource != R.drawable.p2_ship_default) {
@@ -61,10 +90,10 @@ public class Maps extends AppCompatActivity implements View.OnTouchListener {
 
             case MotionEvent.ACTION_UP :
                 // On the UP, we do the click action.
-                // The hidden image (image_areas) has three different hotspots on it.
+                // The hidden image (mask3) has three different hotspots on it.
                 // The colors are red, blue, and yellow.
-                // Use image_areas to determine which region the user touched.
-                int touchColor = getHotspotColor (R.id.image_areas, evX, evY);
+                // Use mask3 to determine which region the user touched.
+                int touchColor = getHotspotColor (R.id.mask3, evX, evY);
 
                 // Compare the touchColor to the expected values. Switch to a different image, depending on what color was touched.
                 // Note that we use a Color Tool object to test whether the observed color is close enough to the real color to
@@ -72,16 +101,16 @@ public class Maps extends AppCompatActivity implements View.OnTouchListener {
                 // varying pixel density.
                 ColorTool ct = new ColorTool ();
                 int tolerance = 25;
-                nextImage = R.drawable.menouno;
-                if (ct.closeMatch (Color.RED, touchColor, tolerance)) nextImage = R.drawable.menounom;
-                else if (ct.closeMatch (Color.BLUE, touchColor, tolerance)) nextImage = R.drawable.menounom;
-                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) nextImage = R.drawable.menounom;
-                else if (ct.closeMatch (Color.WHITE, touchColor, tolerance)) nextImage = R.drawable.menounom;
+                nextImage = R.drawable.tre;
+                if (ct.closeMatch (Color.RED, touchColor, tolerance)) nextImage = R.drawable.trem;
+                else if (ct.closeMatch (Color.BLUE, touchColor, tolerance)) nextImage = R.drawable.trem;
+                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) nextImage = R.drawable.trem;
+                else if (ct.closeMatch (Color.WHITE, touchColor, tolerance)) nextImage = R.drawable.trem;
 
                 // If the next image is the same as the last image, go back to the default.
                 // toast ("Current image: " + currentResource + " next: " + nextImage);
                 if (currentResource == nextImage) {
-                    nextImage = R.drawable.menouno;
+                    nextImage = R.drawable.tre;
                 }
                 handledHere = true;
                 break;

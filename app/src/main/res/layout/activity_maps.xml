@@ -6,19 +6,67 @@
     android:background="@color/background" >
 
     <ImageView
-        android:id="@+id/image_areas"
+        android:id="@+id/mask3"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/menounom"
+        android:src="@drawable/trem"
         android:visibility="invisible"
         />
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/floor3"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/menouno"
+        android:src="@drawable/tre"
+        />
+    <ImageView
+        android:id="@+id/ag3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/treag"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/ar3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trear"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/bg3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trebg"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/br3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trebr"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/cg3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trecg"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/cr3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trecr"
+        android:visibility="invisible"
         />
 
 </FrameLayout>
