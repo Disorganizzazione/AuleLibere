@@ -1,4 +1,4 @@
-package com.harisont.aulelibere;
+package com.example.harisont.aulelibere;
 
 import org.junit.Test;
 
