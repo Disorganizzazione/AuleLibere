@@ -87,23 +87,20 @@ public class Mappe extends AppCompatActivity {
                     Floormin1 floormin1=new Floormin1();
                     return floormin1;
                 case 1:
+                    Floor0 floor0=new Floor0();
+                    return floor0;
+                case 2:
                     Floor1 floor1=new Floor1();
                     return floor1;
-                case 2:
+                case 3:
                     Floor2 floor2=new Floor2();
                     return floor2;
-                case 3:
+                case 4:
                     Floor3 floor3=new Floor3();
                     return floor3;
-                case 4:
+                case 5:
                     Floor4 floor4=new Floor4();
                     return floor4;
-                case 5:
-                    Floor5 floor5=new Floor5();
-                    return floor5;
-                case 6:
-                    Floor6 floor6=new Floor6();
-                    return floor6;
                 default: return null;
             }
         }
