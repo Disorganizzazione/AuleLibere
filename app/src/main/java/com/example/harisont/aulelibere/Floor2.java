@@ -15,23 +15,25 @@ public class Floor2 extends Floor {
 
     public Floor2() {
         this.roomn=4;
-        this.freerooms=new boolean[roomn];
-        this.green=new ImageView[roomn];
-        this.red=new ImageView[roomn];
+        this.rooms=new Room[roomn];
+        rooms[0]=new Room(4, "A2");
+        rooms[1]=new Room(100, "B2");   //assente nel db
+        rooms[2]=new Room(8, "C2");
+        rooms[3]=new Room(100, "D2");   //assente nel db
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.floor2, container, false);
-        green[0]=rootView.findViewById(R.id.ag2);
-        green[1]=rootView.findViewById(R.id.bg2);
-        green[2]=rootView.findViewById(R.id.cg2);
-        green[3]=rootView.findViewById(R.id.dg2);
-        red[0]=rootView.findViewById(R.id.ar2);
-        red[1]=rootView.findViewById(R.id.br2);
-        red[2]=rootView.findViewById(R.id.cr2);
-        red[3]=rootView.findViewById(R.id.dr2);
+        rooms[0].green_view=rootView.findViewById(R.id.ag2);
+        rooms[1].green_view=rootView.findViewById(R.id.bg2);
+        rooms[2].green_view=rootView.findViewById(R.id.cg2);
+        rooms[3].green_view=rootView.findViewById(R.id.dg2);
+        rooms[0].red_view=rootView.findViewById(R.id.ar2);
+        rooms[1].red_view=rootView.findViewById(R.id.br2);
+        rooms[2].red_view=rootView.findViewById(R.id.cr2);
+        rooms[3].red_view=rootView.findViewById(R.id.dr2);
         showCurrentSituation();
         return rootView;
     }

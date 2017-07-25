@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Mappe extends AppCompatActivity {
+public class Maps extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -107,8 +107,8 @@ public class Mappe extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 7;
-        }
+            return 6;
+        }                   //numero di frammenti (santoddio)
 
         @Override
         public CharSequence getPageTitle(int position) {

@@ -15,17 +15,16 @@ public class Floormin1 extends Floor {
 
     public Floormin1() {
         this.roomn=1;
-        this.freerooms=new boolean[roomn];
-        this.green=new ImageView[roomn];
-        this.red=new ImageView[roomn];
+        this.rooms=new Room[roomn];
+        rooms[0]=new Room(3, "A0");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.floormin1, container, false);
-        green[0]=rootView.findViewById(R.id.agm1);
-        red[0]=rootView.findViewById(R.id.arm1);
+        rooms[0].green_view=rootView.findViewById(R.id.agm1);
+        rooms[0].red_view=rootView.findViewById(R.id.arm1);
         showCurrentSituation();
         return rootView;
     }

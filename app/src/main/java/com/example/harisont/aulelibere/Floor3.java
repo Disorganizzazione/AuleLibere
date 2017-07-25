@@ -15,21 +15,22 @@ public class Floor3 extends Floor {
 
     public Floor3() {
         this.roomn=3;
-        this.freerooms=new boolean[roomn];
-        this.green=new ImageView[roomn];
-        this.red=new ImageView[roomn];
+        this.rooms=new Room[roomn];
+        rooms[0]=new Room(5, "A3");
+        rooms[1]=new Room(7, "B3");
+        rooms[2]=new Room(13, "C3");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.floor3, container, false);
-        green[0]=rootView.findViewById(R.id.ag3);
-        green[1]=rootView.findViewById(R.id.bg3);
-        green[2]=rootView.findViewById(R.id.cg3);
-        red[0]=rootView.findViewById(R.id.ar3);
-        red[1]=rootView.findViewById(R.id.br3);
-        red[2]=rootView.findViewById(R.id.cr3);
+        rooms[0].green_view=rootView.findViewById(R.id.ag3);
+        rooms[1].green_view=rootView.findViewById(R.id.bg3);
+        rooms[2].green_view=rootView.findViewById(R.id.cg3);
+        rooms[0].red_view=rootView.findViewById(R.id.ar3);
+        rooms[1].red_view=rootView.findViewById(R.id.br3);
+        rooms[2].red_view=rootView.findViewById(R.id.cr3);
         showCurrentSituation();
         return rootView;
     }

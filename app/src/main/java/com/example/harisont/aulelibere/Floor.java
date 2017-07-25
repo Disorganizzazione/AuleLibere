@@ -1,27 +1,29 @@
 package com.example.harisont.aulelibere;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import org.xmlpull.v1.XmlPullParser;
 
 /**
  * Created by harisont on 17/07/17.
  */
 
-public abstract class Floor extends Fragment {
+public class Floor extends Fragment {
 
     public int roomn;
-    public boolean[] freerooms;     //un piano è un array di stanze
-    public ImageView[] green;
-    public ImageView[] red;
+    public Room[] rooms;     //un piano è un array di stanze
 
     public void showCurrentSituation() {
         for (int i=0; i<roomn; i++) {
-            if (freerooms[i]==true)
-                green[i].setVisibility(View.VISIBLE);
+            if (rooms[i].is_free==true)
+                rooms[i].green_view.setVisibility(View.VISIBLE);
             else
-                red[i].setVisibility(View.VISIBLE);
+                rooms[i].red_view.setVisibility(View.VISIBLE);
         }
     }
-
 }
