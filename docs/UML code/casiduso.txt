@@ -1,0 +1,23 @@
+#direction: right
+#spacing: 80
+#padding: 8
+#arrowSize: 0.3
+
+//Aule libere - AULA
+
+[<actor> studente]
+[<usecase> controlla 
+lo stato corrente 
+delle aule]
+[<usecase> visualizza 
+le informazioni su di una 
+specifica aula]
+[<usecase> fa una segnalazione]
+[<note> verrà implementato
+in una versione successiva
+dell'applicazione]
+
+[studente] -> [controlla]
+[studente] -> [visualizza]
+[studente] -> [fa una segnalazione]
+[fa una segnalazione] -- [verrà implementato]

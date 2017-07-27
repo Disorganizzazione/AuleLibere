@@ -1,0 +1,19 @@
+#direction: right
+#spacing: 80
+#padding: 8
+#arrowSize: 0.3
+
+//Aule libere - AULA
+
+[<start> aperta]
+[<state> occupata]
+[<state> libera]
+[<note> sarà colorata di verde]
+[<hidden> chiusa]
+
+[chiusa] -> [occupata]
+[chiusa] -> [libera]
+[aperta] <-> [chiusa]
+[occupata] -> [libera]
+[occupata] <- [libera]
+[libera] -- [sarà colorata di verde]

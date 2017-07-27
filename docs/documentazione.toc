@@ -1,0 +1,22 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {part}{I\hspace {1em}Introduzione al progetto}{3}{part.1}
+\contentsline {section}{\numberline {1}Abstract}{3}{section.1}
+\contentsline {section}{\numberline {2}Obiettivi}{3}{section.2}
+\contentsline {paragraph}{Prospettive e sviluppi futuri}{3}{section*.2}
+\contentsline {part}{II\hspace {1em}Documento di analisi}{4}{part.2}
+\contentsline {section}{\numberline {3}Analisi dei requisiti e descrizione delle soluzioni adottate}{4}{section.3}
+\contentsline {paragraph}{Metodologie di sviluppo}{4}{section*.3}
+\contentsline {section}{\numberline {4}Requisiti di sistema}{4}{section.4}
+\contentsline {paragraph}{Minimi}{4}{section*.4}
+\contentsline {paragraph}{Consigliati}{4}{section*.5}
+\contentsline {part}{III\hspace {1em}Documentazione UML}{5}{part.3}
+\contentsline {section}{\numberline {5}Diagramma di classe}{5}{section.5}
+\contentsline {section}{\numberline {6}Casi d'uso}{6}{section.6}
+\contentsline {section}{\numberline {7}Diagramma di sequenza}{7}{section.7}
+\contentsline {section}{\numberline {8}Diagramma di collaborazione}{8}{section.8}
+\contentsline {section}{\numberline {9}Diagramma di stato}{9}{section.9}
+\contentsline {section}{\numberline {10}Diagramma di attivit\IeC {\`a}}{10}{section.10}
+\contentsline {part}{IV\hspace {1em}Test funzionali}{11}{part.4}
+\contentsline {part}{V\hspace {1em}Design pattern}{12}{part.5}
+\contentsline {part}{VI\hspace {1em}Glossario}{13}{part.6}
