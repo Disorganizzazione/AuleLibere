@@ -16,8 +16,8 @@ public class Floor0 extends Floor {
         this.roomn=3;
         this.rooms=new Room[roomn];
         rooms[0]=new Room(3, "A0");
-        rooms[1]=new Room(2, "LabVerde");
-        rooms[2]=new Room(1, "LabGiallo");
+        rooms[1]=new Room(2, "LabVerde", "09:00", "18:00");  //controllare orari laboratori
+        rooms[2]=new Room(1, "LabGiallo", "09:00", "18:00");
     }
 
     @Override

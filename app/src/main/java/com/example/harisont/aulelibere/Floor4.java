@@ -17,7 +17,7 @@ public class Floor4 extends Floor {
         this.roomn=2;
         this.rooms=new Room[roomn];
         rooms[0]=new Room(102, "AulaStudio");   //non presente nel db
-        rooms[1]=new Room(103, "Biblioteca");   //non presente nel db
+        rooms[1]=new Room(103, "Biblioteca", "09:00", "13:00");   //non presente nel db, controllare orario biblio
     }
 
     @Override

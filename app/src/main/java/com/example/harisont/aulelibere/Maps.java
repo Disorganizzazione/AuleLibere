@@ -84,23 +84,17 @@ public class Maps extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             switch (position) {
                 case 0:
-                    Floormin1 floormin1=new Floormin1();
-                    return floormin1;
+                    return new Floormin1();
                 case 1:
-                    Floor0 floor0=new Floor0();
-                    return floor0;
+                    return new Floor0();
                 case 2:
-                    Floor1 floor1=new Floor1();
-                    return floor1;
+                    return new Floor1();
                 case 3:
-                    Floor2 floor2=new Floor2();
-                    return floor2;
+                    return new Floor2();
                 case 4:
-                    Floor3 floor3=new Floor3();
-                    return floor3;
+                    return new Floor3();
                 case 5:
-                    Floor4 floor4=new Floor4();
-                    return floor4;
+                    return new Floor4();
                 default: return null;
             }
         }
