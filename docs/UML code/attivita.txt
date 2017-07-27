@@ -1,0 +1,27 @@
+#direction: down
+#spacing: 80
+#padding: 8
+#arrowSize: 0.3
+
+//Aule libere - AULA
+
+[<start> inizio]
+[<state> individua un'aula libera]
+[<state> controlla fino a che ora
+l'aula è disponibile]
+[<state> individua un'aula occupata]
+[<state> controlla quando si
+libererà l'aula]
+[<choice> ----]
+[<choice> ....]
+[<end> fine]
+
+
+[inizio] -> [----]
+[----] -> [individua un'aula libera]
+[----] -> [individua un'aula occupata]
+[individua un'aula libera] -> [controlla fino a che ora]
+[individua un'aula occupata] -> [controlla quando si]
+[controlla fino a che ora] -> [....]
+[controlla quando si] -> [....]
+[....] -> [fine]

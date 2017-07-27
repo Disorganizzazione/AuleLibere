@@ -12,6 +12,7 @@ public class Room {
     boolean is_free;
     ImageView green_view;
     ImageView red_view;
+
     //aggiungere orario di apertura-chiusura per incrociare i dati con quelli del db. verde=non prenotata AND aperta
 
     public Room(int id, String name) {

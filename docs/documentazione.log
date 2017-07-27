@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  27 JUL 2017 03:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  27 JUL 2017 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,6 +433,7 @@ Now handling font encoding PD1 ...
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `pageanchor' set `true' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -505,22 +506,22 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 (./documentazione.aux)
 \openout1 = `documentazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Info: Redefining \it@ocap on input line 18.
-LaTeX Info: Redefining \it@ccap on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Info: Redefining \it@ocap on input line 19.
+LaTeX Info: Redefining \it@ccap on input line 19.
 \AtBeginShipoutBox=\box26
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
@@ -531,7 +532,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 143.
 )
-Package hyperref Info: Link coloring ON on input line 18.
+Package hyperref Info: Link coloring ON on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -541,9 +542,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count103
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./documentazione.out) (./documentazione.out)
 \@outlinefile=\write3
@@ -579,11 +580,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 20.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 20.
+(Font)              <6> on input line 21.
 
 [1
 
@@ -593,66 +594,103 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 [2] [3]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 34.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 34.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 38.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 36.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [4] [5]
-<casiduso.png, id=121, 1017.8025pt x 517.935pt>
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 39.
+ [4] [5]
+<casiduso.png, id=113, 1017.8025pt x 517.935pt>
 File: casiduso.png Graphic file (type png)
  <use casiduso.png>
 Package pdftex.def Info: casiduso.png used on input line 49.
-(pdftex.def)             Requested size: 407.1138pt x 207.17032pt.
+(pdftex.def)             Requested size: 345.0pt x 175.55815pt.
 
-Overfull \hbox (62.1138pt too wide) in paragraph at lines 49--51
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
+
  []
 
-[6 <./casiduso.png>] [7] [8] <stato.png, id=138, 973.6375pt x 255.95625pt>
+[6 <./casiduso.png>] [7] <stato.png, id=126, 973.6375pt x 255.95625pt>
 File: stato.png Graphic file (type png)
 
 <use stato.png>
-Package pdftex.def Info: stato.png used on input line 62.
-(pdftex.def)             Requested size: 438.13283pt x 115.17923pt.
+Package pdftex.def Info: stato.png used on input line 59.
+(pdftex.def)             Requested size: 345.0pt x 90.6952pt.
 
-Overfull \hbox (93.13283pt too wide) in paragraph at lines 62--64
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 57--63
+
  []
 
-[9 <./stato.png>] [10] [11] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+[8 <./stato.png>] <attivita.png, id=133, 509.905pt x 538.01pt>
+File: attivita.png Graphic file (type png)
+
+<use attivita.png>
+Package pdftex.def Info: attivita.png used on input line 67.
+(pdftex.def)             Requested size: 345.0pt x 364.0359pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--71
+
+ []
+
+[9 <./attivita.png>] [10] [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--84
+
+ []
+
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (./documentazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
 Package rerunfilecheck Info: File `documentazione.out' has not changed.
-(rerunfilecheck)             Checksum: E01F32F25DCD2CA32496DC166C70AEDD;943.
+(rerunfilecheck)             Checksum: E3192808D893ACCC3514E963884F1898;880.
  ) 
 Here is how much of TeX's memory you used:
- 6413 strings out of 494901
- 89909 string characters out of 6179486
- 178987 words of memory out of 5000000
- 9609 multiletter control sequences out of 15000+600000
- 13629 words of font info for 33 fonts, out of 8000000 for 9000
+ 6419 strings out of 494901
+ 89996 string characters out of 6179486
+ 179004 words of memory out of 5000000
+ 9615 multiletter control sequences out of 15000+600000
+ 15016 words of font info for 35 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,8n,28p,823b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </hom
-e/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/hariso
-nt/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/harisont/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/harisont/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb>
-Output written on documentazione.pdf (13 pages, 179437 bytes).
+ 29i,7n,28p,1100b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </hom
+e/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/hariso
+nt/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/harisont/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/harisont/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/harisont/.texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm20
+74.600pk>
+Output written on documentazione.pdf (12 pages, 217230 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 482 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
