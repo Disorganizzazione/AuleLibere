@@ -22,7 +22,7 @@ public class Room {
         this.id=id;
         this.name=name;
         this.is_free=true;
-        this.opening_time="09:00";
+        this.opening_time="08:00";
         this.closing_time="19:00";
     }
 

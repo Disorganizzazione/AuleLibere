@@ -22,9 +22,10 @@ public class Floor extends Fragment {
         Date opening;
         Date closing;
         Calendar curr_date = Calendar.getInstance();
-        int hour = curr_date.get(Calendar.HOUR);
+        int hour = curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
         int minute = curr_date.get(Calendar.MINUTE);
         now = parseDate(hour + ":" + minute);
+        System.out.println(now);
 
         for (int i=0; i<roomn; i++) {
             opening = parseDate(rooms[i].opening_time);
@@ -37,12 +38,12 @@ public class Floor extends Fragment {
     }
 
     private Date parseDate(String date) {
-        final String inputFormat = "HH:mm";     //dichiaro il formato dell'ora
+        final String inputFormat = "HH:mm";     //dichiaro il formato dell'ora, HH (maiuscolo) indica il formato 24h
         SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.ITALY);
         try {
             return inputParser.parse(date);
         } catch (java.text.ParseException e) {
-            return new Date(0);
+            return new Date();
         }
     }
 }
