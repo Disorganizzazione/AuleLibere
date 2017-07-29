@@ -13,6 +13,7 @@ import java.util.Locale;
 import java.util.Calendar;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 /**
@@ -73,33 +74,41 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         final int evY = (int) event.getY();
         ImageView vm=null;
         switch(v.getId()) {
-            case 1000:
+            case 10:
                 vm=getView().findViewById(R.id.mask0);
                 break;
-            case 1001:
+            case 11:
                 vm=getView().findViewById(R.id.mask1);
                 break;
-            case 1002:
+            case 12:
                 vm=getView().findViewById(R.id.mask2);
                 break;
-            case 1003:
+            case 13:
                 vm=getView().findViewById(R.id.mask3);
                 break;
-            case 1004:
+            case 14:
                 vm=getView().findViewById(R.id.mask4);
                 break;
             default: break;
         }
+        int floor=v.getId()%10;
         Bitmap bitmap=((BitmapDrawable)vm.getDrawable()).getBitmap();
         int pixel=bitmap.getPixel(evX, evY);
         int redValue = Color.red(pixel);
         int blueValue = Color.blue(pixel);
         int greenValue = Color.green(pixel);
-        System.out.println(redValue+", "+ blueValue+", "+ greenValue);
-        /*if(pixel==Color.RED) System.out.println("Sono l'aula A0");
-        else if(pixel==Color.BLUE) System.out.println("Sono l'aula XXX");
-        else if(pixel==Color.YELLOW) System.out.println("Sono il lab. giallo");
-        else if(pixel==Color.GREEN) System.out.println("Sono il lab. verde");*/
+        if(pixel==Color.RED) Toast.makeText(getActivity(), "Sono l'aula A del piano "+floor, Toast.LENGTH_LONG).show();
+        else if(pixel==Color.GREEN) Toast.makeText(getActivity(), "Sono l'aula B del piano "+floor, Toast.LENGTH_LONG).show();
+        else if(pixel==Color.BLUE) Toast.makeText(getActivity(), "Sono l'aula C del piano "+floor, Toast.LENGTH_LONG).show();
+        else if(pixel==Color.YELLOW) Toast.makeText(getActivity(), "Sono l'aula D del piano "+floor, Toast.LENGTH_LONG).show();
+        //this.rooms[floor].closing_time=""; //ora si possono fare tutte le cose che si vuole :)
         return false;
+    }
+    void updateEntries() {
+        String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
+        for (Room room : rooms) {
+            FindEntries query = new FindEntries(getContext());
+            query.execute(Integer.toString(room.id), time, time);
+        }
     }
 }

@@ -30,7 +30,7 @@ public class Floor1 extends Floor {
         rooms[0].red_view=rootView.findViewById(R.id.ar1);
         rooms[1].red_view=rootView.findViewById(R.id.br1);
         ImageView iv = rootView.findViewById(R.id.floor1);
-        iv.setId(1001);
+        iv.setId(11);
         if (iv != null) iv.setOnTouchListener(this);
         return rootView;
     }
