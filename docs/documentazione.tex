@@ -77,8 +77,8 @@
 	\appendix
 	\part{Glossario}
 	\textit{\textbf{Aula dipartimentale}}: aula situata all'interno del dipartimento, aperta agli studenti almeno in alcuni orari. Si considerano aule dipartimentali le aule per la didattica frontale, le biblioteche, i laboratori e le aule studio, \textbf{non} sono compresi nella definizione gli uffici dei docenti e del personale tecnico amministrativo. Nel codice, ogni aula dipartimentale è un'istanza della classe \code{Room}.\\\\
-	\textit{\textbf{Piano}}: nel contesto dell'applicazione, quando si parla di "piano" si fa riferimento alla classe \code{Floor}, utilizzata per descrivere i veri e propri piani del dipartimento tramite la loro caratteristica saliente: un piano è, difatti, un array di \code{Room}, cui corrisponde un layout xml costituito da più immagini in sovrapposizione.\\\\
+	\textit{\textbf{Piano}}: nel contesto dell'applicazione, quando si parla di "piano" si fa riferimento alla classe \code{Floor}, utilizzata per descrivere i veri e propri piani del dipartimento tramite la loro caratteristica saliente: un \code{Floor} è, difatti, un array di \code{Room}, cui corrisponde un layout xml costituito da più immagini in sovrapposizione.\\\\
 	\textit{\textbf{Database mrbs}}: database contenente tutte le informazioni relative alle aule dipartimentali e al loro utilizzo.\\\\
-	\textit{\textbf{Frammento}}: Porzione della UI in un'\code{Activity} di un'applicazione Android. Il termine "frammento" fa riferimento alla classe \code{Fragment} delle librerie Java per Android; che tuttavia nel progetto non viene utilizzata direttamente, ma estesa nella classe \code{Floor}.\\\\
+	\textit{\textbf{Frammento}}: Porzione della UI in un'\code{Activity} di un'applicazione Android. Il termine "frammento" fa riferimento alla classe \code{Fragment} delle librerie Java per Android; che nel progetto è utilizzata tramite la classe \code{Floor}, che la estende.\\\\
 	%(Segue)
 \end{document}

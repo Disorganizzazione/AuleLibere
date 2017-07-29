@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  27 JUL 2017 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  29 JUL 2017 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -603,7 +603,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 39.
  [4] [5]
-<casiduso.png, id=113, 1017.8025pt x 517.935pt>
+<casiduso.png, id=73, 1017.8025pt x 517.935pt>
 File: casiduso.png Graphic file (type png)
  <use casiduso.png>
 Package pdftex.def Info: casiduso.png used on input line 49.
@@ -613,7 +613,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--53
 
  []
 
-[6 <./casiduso.png>] [7] <stato.png, id=126, 973.6375pt x 255.95625pt>
+[6 <./casiduso.png>] [7] <stato.png, id=88, 973.6375pt x 255.95625pt>
 File: stato.png Graphic file (type png)
 
 <use stato.png>
@@ -624,7 +624,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--63
 
  []
 
-[8 <./stato.png>] <attivita.png, id=133, 509.905pt x 538.01pt>
+[8 <./stato.png>] <attivita.png, id=96, 509.905pt x 538.01pt>
 File: attivita.png Graphic file (type png)
 
 <use attivita.png>
@@ -667,30 +667,64 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (./documentazione.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
-Package rerunfilecheck Info: File `documentazione.out' has not changed.
-(rerunfilecheck)             Checksum: E3192808D893ACCC3514E963884F1898;880.
+
+
+Package rerunfilecheck Warning: File `documentazione.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `documentazione.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  E3192808D893ACCC3514E963884F1898;880.
  ) 
 Here is how much of TeX's memory you used:
- 6419 strings out of 494901
- 89996 string characters out of 6179486
- 179004 words of memory out of 5000000
- 9615 multiletter control sequences out of 15000+600000
+ 6412 strings out of 494901
+ 89946 string characters out of 6179486
+ 178990 words of memory out of 5000000
+ 9599 multiletter control sequences out of 15000+600000
  15016 words of font info for 35 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,7n,28p,1100b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </hom
-e/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/hariso
-nt/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/harisont/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/harisont/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/harisont/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm20
-74.600pk>
-Output written on documentazione.pdf (12 pages, 217230 bytes).
+pdfTeX warning (dest): name{section.0.9} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.0.1} has been referenced but does not exist
+, replaced by a fixed one
+
+ </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </home/
+harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/harisont
+/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/harisont/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/harisont/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074
+.600pk>
+Output written on documentazione.pdf (12 pages, 217204 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

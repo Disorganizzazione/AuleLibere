@@ -29,7 +29,9 @@ public class Floor1 extends Floor {
         rooms[1].green_view=rootView.findViewById(R.id.bg1);
         rooms[0].red_view=rootView.findViewById(R.id.ar1);
         rooms[1].red_view=rootView.findViewById(R.id.br1);
-        showCurrentSituation();
+        ImageView iv = rootView.findViewById(R.id.floor1);
+        iv.setId(1001);
+        if (iv != null) iv.setOnTouchListener(this);
         return rootView;
     }
 }

@@ -1,10 +1,18 @@
 package com.example.harisont.aulelibere;
 
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.view.MotionEvent;
+import android.view.View.OnTouchListener;
+import android.graphics.Bitmap;
+
+import static android.R.attr.x;
+import static android.R.attr.y;
 
 /**
  * Created by harisont on 25/07/17.
@@ -24,13 +32,16 @@ public class Floor0 extends Floor {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.floor0, container, false);
-        rooms[0].green_view=rootView.findViewById(R.id.ag0);
-        rooms[1].green_view=rootView.findViewById(R.id.gg0);
-        rooms[2].green_view=rootView.findViewById(R.id.vg0);
-        rooms[0].red_view=rootView.findViewById(R.id.ar0);
-        rooms[1].red_view=rootView.findViewById(R.id.gr0);
-        rooms[2].red_view=rootView.findViewById(R.id.vr0);
-        showCurrentSituation();
+        rooms[0].green_view = rootView.findViewById(R.id.ag0);
+        rooms[1].green_view = rootView.findViewById(R.id.gg0);
+        rooms[2].green_view = rootView.findViewById(R.id.vg0);
+        rooms[0].red_view = rootView.findViewById(R.id.ar0);
+        rooms[1].red_view = rootView.findViewById(R.id.gr0);
+        rooms[2].red_view = rootView.findViewById(R.id.vr0);
+
+        ImageView iv = rootView.findViewById(R.id.floor0);
+        iv.setId(1000);
+        if (iv != null) iv.setOnTouchListener(this);
         return rootView;
     }
 }

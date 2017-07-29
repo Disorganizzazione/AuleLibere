@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Maps extends AppCompatActivity {
 
@@ -41,6 +42,7 @@ public class Maps extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        toast("Scorri il dito sullo schermo per visualizzare gli altri piani.");
     }
 
 
@@ -84,16 +86,14 @@ public class Maps extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             switch (position) {
                 case 0:
-                    return new Floormin1();
-                case 1:
                     return new Floor0();
-                case 2:
+                case 1:
                     return new Floor1();
-                case 3:
+                case 2:
                     return new Floor2();
-                case 4:
+                case 3:
                     return new Floor3();
-                case 5:
+                case 4:
                     return new Floor4();
                 default: return null;
             }
@@ -101,7 +101,7 @@ public class Maps extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 6;
+            return 5;
         }                   //numero di frammenti (santoddio)
 
         @Override
@@ -125,4 +125,11 @@ public class Maps extends AppCompatActivity {
             return null;
         }
     }
+
+    public void toast (String msg)
+    {
+        Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
+    } // end toast
 }
+
+
