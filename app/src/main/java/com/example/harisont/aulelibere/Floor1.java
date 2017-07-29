@@ -12,11 +12,13 @@ import android.widget.ImageView;
 
 public class Floor1 extends Floor {
 
+    private static boolean flag1=false;
+
     public Floor1() {
         this.roomn=2;
         this.rooms=new Room[roomn];
         rooms[0]=new Room(4, "A2");
-        rooms[1]=new Room(6, "B1", "00:00", "23:59");    //solo per il test
+        rooms[1]=new Room(6, "B1");
     }
 
     @Override
