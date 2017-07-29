@@ -1,61 +1,90 @@
 package com.example.harisont.aulelibere;
 
-import android.support.v4.app.Fragment;
+import android.content.Context;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-
+import android.widget.ProgressBar;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.Calendar;
 
 /**
- * Created by harisont on 17/07/17.
+ * Created by tomma on 28/07/2017.
  */
 
-public class Floor extends Fragment {
+public class FindEntries extends AsyncTask<String, Void, String> {
+    private Exception exception;
+    ProgressBar progressBar;
+    private Context context;
+    String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/entries_by_id_and_time.php";
 
-    public int roomn;
-    public Room[] rooms;     //un piano è un array di stanze
-    public void showCurrentSituation() {
-        Date now;
-        Date opening;
-        Date closing;
-        Calendar curr_date = Calendar.getInstance();
-        int hour = curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
-        int minute = curr_date.get(Calendar.MINUTE);
-        now = parseDate(hour + ":" + minute);
-        System.out.println(now);
-        for (int i=0; i<roomn; i++) {
-            opening = parseDate(rooms[i].opening_time);
-            closing = parseDate(rooms[i].closing_time);
-            if (rooms[i].is_free && opening.before(now) && closing.after(now))
-                rooms[i].green_view.setVisibility(View.VISIBLE);
-            //else
-            //rooms[i].green_view.setImageResource(R.drawable.duear);
-        }
-        updateEntries();
-
+    public FindEntries(Context context){
+        this.context = context;
     }
-
-    private Date parseDate(String date) {
-        final String inputFormat = "HH:mm";     //dichiaro il formato dell'ora, HH (maiuscolo) indica il formato 24h
-        SimpleDateFormat inputParser = new SimpleDateFormat(inputFormat, Locale.ITALY);
+    protected void onPreExecute() {
+        progressBar = new ProgressBar(context);
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    protected String doInBackground(String... params) {
         try {
-            return inputParser.parse(date);
-        } catch (java.text.ParseException e) {
-            return new Date();
-        }
+            URL url = new URL(API_URL);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            Uri.Builder builder = new Uri.Builder()
+                    .appendQueryParameter("room_id", params[0])
+                    .appendQueryParameter("start_time", params[1])
+                    .appendQueryParameter("end_time", params[2]);
+            String query = builder.build().getEncodedQuery();
 
+            try {
+
+                OutputStream os = urlConnection.getOutputStream();
+                BufferedWriter writer = new BufferedWriter (new OutputStreamWriter(os, "UTF-8"));
+                urlConnection.connect();
+                writer.write(query);
+                writer.flush();
+                writer.close();
+                os.close();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    stringBuilder.append(line).append("\n");
+                }
+                bufferedReader.close();
+                Log.i("response code:" ,String.valueOf(urlConnection.getResponseCode()));
+                return stringBuilder.toString();
+            }
+            finally{
+                urlConnection.disconnect();
+            }
+        } catch(Exception e) {
+            Log.e("ERROR", e.getMessage(), e);
+            return null;
+        }
     }
 
-    void updateEntries(){
-        String time = String.valueOf(System.currentTimeMillis()/1000); // milliseconds is seconds * 1000
-        for(Room room : rooms) {
-            FindEntries query = new FindEntries(getContext());
-            query.execute(Integer.toString(room.id), time, time);
-        }
+    protected void onPostExecute(String response) {
+        /* try {
+            JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } */
+        Log.i("INFO", response);
+        progressBar.setVisibility(View.GONE);
+
     }
 }
