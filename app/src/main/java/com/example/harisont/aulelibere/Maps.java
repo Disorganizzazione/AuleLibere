@@ -42,7 +42,7 @@ public class Maps extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        toast("Scorri il dito sullo schermo per visualizzare gli altri piani.");
+        Toast.makeText(getApplicationContext(), "Scorri il dito sullo schermo per passare al piano successivo. Tocca un aula per visualizzare ulteriori informazioni", Toast.LENGTH_LONG).show ();
     }
 
 
@@ -52,25 +52,7 @@ public class Maps extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_mappe, menu);
         return true;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
-
+    
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -125,11 +107,6 @@ public class Maps extends AppCompatActivity {
             return null;
         }
     }
-
-    public void toast (String msg)
-    {
-        Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
-    } // end toast
 }
 
 
