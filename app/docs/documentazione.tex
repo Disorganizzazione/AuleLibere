@@ -11,7 +11,7 @@
 \usepackage{graphicx}
 \def\code#1{\texttt{#1}}
 
-\title{{\huge Visualizzatore di aule libere}}
+\title{{\huge AuleLibere: un visualizzatore dello stato di occupazione delle aule dipartimentali}}
 \author{Arianna Masciolini, matricola 285025\\ Tommaso Ricci, matricola 287123}
 \date{A.A. 2016-2017}
 
@@ -37,11 +37,18 @@
 	\paragraph{Metodologie di sviluppo}
 	La metodologia adottata per lo sviluppo dell'app Android si basa sull'approccio incrementale, più efficiente e gratificante rispetto al tradizionale modello a cascata, specialmente per sviluppatori alle prime armi. Per ragioni analoghe, si è deciso di coniugare i rilasci successivi con l'idea di pair programming.
 	Al fine di semplificare la collaborazione tra i due autori del progetto quando non si è rivelato possibile lavorare alla stessa postazione e per facilitare, in futuro, la diffusione e il miglioramento dell'applicazione, si è deciso di pubblicarne il codice sorgente, disponibile all'indirizzo \url{https://github.com/Disorganizzazione/AuleLibere}.
+	L'ambiente di programmazione utilizzato è Android Studio.
 	\section{Requisiti minimi di sistema}
-	Sistema operativo Android 4.2.2 (Jelly Bean) o superiore, 512 MB RAM, processore single-core 1 Ghz, accesso ad internet.
+	Sistema operativo Android 4.2.2 (Jelly Bean) o superiore, 1 GB RAM, processore single-core 1 Ghz, accesso ad internet.
 	\newpage
 	\part{Documentazione UML}
 	\section{Diagramma di classe}
+	Nel diagramma di classe, per chiarezza, si è scelto di inserire,  lasciandole vuote, anche le classi estese e le interfacce implementate direttamente preesistenti il progetto. Anche la classe Maps, creata automaticamente da Android Studio, è stata lasciata vuota, in modo da rendere il diagramma il più possibile esplicativo del lavoro svolto.
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{class}
+		\centering
+		\caption{Diagramma delle classi}
+	\end{figure}
 	\newpage
 	\section{Casi d'uso}
 	Nel diagramma dei casi d'uso si sono volute lasciare, per completezza, anche indicazioni sulle azioni che l'utente potrà compiere nelle versioni future dell'applicazione.\\\\
@@ -52,6 +59,11 @@
 	\end{figure}
 	\newpage
 	\section{Diagramma di sequenza}
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{seq}
+		\centering
+		\caption{Diagramma di sequenza}
+	\end{figure}
 	\newpage
 	\section{Diagramma di stato}
 	Lo stato di un'aula varia in modo ciclico: solo per rispettare le convenzioni, si è comunque scelto come stato iniziale quello in cui l'aula è chiusa; tuttavia la scelta è del tutto arbitraria, per cui si è rinunciato a definire anche uno stato finale distinto, dal momento che tale decisione avrebbe costituito una forzatura.\\\\
@@ -70,9 +82,37 @@
 	\end{figure}
 	\newpage
 	\part{Test funzionali}
+	Particolarmente interessante testare non tanto le vere e proprie interazioni tra utente ed applicazione, che si limitano allo swipe per le transizioni da un frammento a un altro e al tocco di un'aula per la visualizzazione di informazioni aggiuntive, quanto il comportamento dell'applicazione al variare dell'ora e del giorno della settimana. Il programma utilizza in diversi modi la data e l'ora impostate sul telefonino: per determinare se l'università è aperta o chiusa, per decidere se una specifica aula è aperta o chiusa secondo il suo orario specifico -si pensi ad esempio ai laboratori, che hanno un orario differente rispetto a quello degli altri ambienti-, per determinare, in base al risultato delle query, se le aule sono libere od occupate e, soprattutto, per effettuare la query che determina quali aule siano occupate in un dato momento. Indirettamente, in ogni caso, si possono interpretare data ed ora correnti come un input da parte dell'utente (che, peraltro, può effettivamente impostarle a suo piacimento). Potrebbe sembrare che tutti gli input siano validi. Osserviamo subito però che, per il formato impiegato nel database per indicare i momenti di inizio e fine di una prenotazione (Unix Timestamp) gli input ammissibili sono limitati sia superiormente che inferiormente.
+	Un possibile set di casi di test funzionali è dunque:\\
+	
+\begin{table}[h]
+	\centering
+	\label{my-label}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		n. & Time       & Validità \\ \hline
+		1  & 1501448305 & V        \\ \hline
+		2  & -1         & NV       \\ \hline
+		3  & 4294967296 & NV       \\ \hline
+	\end{tabular}
+	
+\end{table}
+
+Dove abbiamo come casi estremi:
+
+\begin{table}[h]
+	\centering
+	\label{my-label}
+	\begin{tabular}{|l|l|}
+		\hline
+		Validi        & Non validi     \\ \hline
+		0, 2147483647 & -1, 2147483648 \\ \hline
+	\end{tabular}
+\end{table}
+
 	\newpage
 	\part{Design pattern} %(Siamo sicuri?)
-	Un pattern creazionale che ben si adatta alla situazione presentata è quello di \textbf{Abstract Factory o Kit}, il quale consente di rendere intercambiabili diverse implementazioni che soddisfano una determinata interfaccia. E' questo il caso delle molteplici classi che estendono \code{Floor} (si veda a tal proposito il diagramma delle classi a \hyperlink{page.5}{pag. 5}), tanto simili fra loro che le si sarebbe volute implementare come un' unica classe \code{Floor}, provvista di un costruttore con parametri volti ad attribuire ad ogni piano le proprie caratteristiche specifiche (ad esempio, le aule in esso situate). Tuttavia, per l'uso che se ne fa, \code{Floor} deve necessariamente essere una sottoclasse di \code{Fragment}, il che impedisce l'uso di costruttori differenti da quello di default. Poiché l'Abstract Factory sembrava una struttura eccessivamente complessa, benché calzante, per essere inserita nel lavoro svolto, si è deciso semplicemente di rendere \code{Floor} una classe astratta ed estenderla per ogni piano del Dipartimento.
+	Un pattern creazionale che ben si adatta alla situazione presentata, e che si terrà in cosiderazione per sviluppi futuri, è l' \textbf{Abstract Factory o Kit}, che consente di rendere intercambiabili diverse implementazioni che soddisfano una determinata interfaccia. E' questo il caso delle molteplici classi che estendono \code{Floor} (si veda a tal proposito il diagramma delle classi a \hyperlink{page.5}{pag. 5}), tanto simili fra loro che le si sarebbe volute implementare come un' unica classe \code{Floor}, provvista di un costruttore con parametri volti ad attribuire ad ogni piano le proprie caratteristiche specifiche (ad esempio, le aule in esso situate). Tuttavia, per l'uso che se ne fa, \code{Floor} deve necessariamente essere una sottoclasse di \code{Fragment}, il che impedisce l'uso di costruttori differenti da quello di default. Per il momento, difatti, si è deciso semplicemente di rendere \code{Floor} una classe astratta ed estenderla per ogni piano del Dipartimento.
 	\newpage
 	\appendix
 	\part{Glossario}

@@ -28,7 +28,7 @@ import java.util.List;
 public class FindLiveEntry extends AsyncTask<String, Void, String> {
     private Exception exception;
     ProgressBar progressBar;
-    Room room;
+    public Room room;
     private Context context;
     String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/entries_by_id_and_time.php";
 
