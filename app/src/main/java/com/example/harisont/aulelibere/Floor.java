@@ -26,7 +26,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
 
     protected int roomn;
     protected Room[] rooms;     //un piano è un array di stanze
-
+    long timestamp = 0;
     private void showCurrentSituation() {
         /*parte che verrà modularizzata*/
         Date now;
@@ -36,7 +36,10 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         int hour = curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
         int minute = curr_date.get(Calendar.MINUTE);
         now = parseDate(hour + ":" + minute);
-        updateEntries();
+        if((timestamp - System.currentTimeMillis()/1000) > 3600 || timestamp == 0) {
+            updateEntries();
+            timestamp = System.currentTimeMillis()/1000;
+        }
         for (int i=0; i<roomn; i++) {
             opening = parseDate(rooms[i].opening_time);
             closing = parseDate(rooms[i].closing_time);

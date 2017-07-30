@@ -78,7 +78,7 @@ public class FindEntries extends AsyncTask<String, Void, String> {
                     jsonArrayResponse = (JSONArray) new JSONTokener(response).nextValue();
                     jsonResponse= jsonArrayResponse.getJSONObject(1);
                     Log.i("jsontokener", jsonResponse.toString());
-                    Log.i("time", params[1].toString());
+                    Log.i("time", params[1]);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -88,13 +88,6 @@ public class FindEntries extends AsyncTask<String, Void, String> {
                 }
                 else room.is_free = true;
                 return "IT IS EMPTYYYY";
-
-
-
-
-
-
-
             }
             finally{
                 urlConnection.disconnect();
