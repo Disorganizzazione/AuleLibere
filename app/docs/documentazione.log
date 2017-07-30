@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  30 JUL 2017 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  31 JUL 2017 01:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,7 +700,7 @@ Here is how much of TeX's memory you used:
  9624 multiletter control sequences out of 15000+600000
  15016 words of font info for 35 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,8n,28p,1330b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,1422b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </hom
 e/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/hariso
 nt/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/harisont/.texm
@@ -710,7 +710,7 @@ jfour/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jk
 nappen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/e
 c/ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm20
 74.600pk>
-Output written on documentazione.pdf (13 pages, 330986 bytes).
+Output written on documentazione.pdf (13 pages, 331095 bytes).
 PDF statistics:
  515 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams
