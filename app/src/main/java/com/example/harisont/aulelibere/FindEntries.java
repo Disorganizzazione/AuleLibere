@@ -25,14 +25,14 @@ import java.util.List;
  * Created by tomma on 28/07/2017.
  */
 
-public class FindLiveEntry extends AsyncTask<String, Void, String> {
+public class FindEntries extends AsyncTask<String, Void, String> {
     private Exception exception;
     ProgressBar progressBar;
     public Room room;
     private Context context;
     String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/entries_by_id_and_time.php";
 
-    public FindLiveEntry(Context context, Room room){
+    public FindEntries(Context context, Room room){
         this.context = context;
         this.room = room;
     }

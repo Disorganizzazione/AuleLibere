@@ -176,7 +176,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
     private void updateEntries() {
         String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
         for (Room room : rooms) {
-            FindLiveEntry query = new FindLiveEntry(getContext(),room);
+            FindEntries query = new FindEntries(getContext(),room);
             try {
                 query.execute(time).get();
             } catch (InterruptedException e) {

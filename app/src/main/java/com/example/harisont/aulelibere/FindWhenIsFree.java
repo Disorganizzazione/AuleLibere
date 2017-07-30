@@ -32,7 +32,7 @@ public class FindWhenIsFree extends AsyncTask<String, Void, Void>{
     ProgressBar progressBar;
     Room room;
     private Context context;
-    String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/entries_by_id_and_time.php";
+    String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/next_entries.php";
 
     public FindWhenIsFree(Context context, Room room){
         this.context = context;
