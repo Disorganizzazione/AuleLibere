@@ -17,6 +17,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -26,11 +28,13 @@ import java.net.URL;
 public class FindEntries extends AsyncTask<String, Void, String> {
     private Exception exception;
     ProgressBar progressBar;
+    Room room;
     private Context context;
     String API_URL = "http://ec2-34-213-124-6.us-west-2.compute.amazonaws.com/entries_by_id_and_time.php";
 
-    public FindEntries(Context context){
+    public FindEntries(Context context, Room room){
         this.context = context;
+        this.room = room;
     }
     protected void onPreExecute() {
         progressBar = new ProgressBar(context);
@@ -66,7 +70,31 @@ public class FindEntries extends AsyncTask<String, Void, String> {
                 }
                 bufferedReader.close();
                 Log.i("response code:" ,String.valueOf(urlConnection.getResponseCode()));
-                return stringBuilder.toString();
+                String response = stringBuilder.toString();
+                response = response.substring(response.indexOf("<body>") + 6, response.indexOf("</body>"));
+                JSONObject jsonResponse = null;
+                JSONArray jsonArrayResponse = null;
+                try{
+                    jsonArrayResponse = (JSONArray) new JSONTokener(response).nextValue();
+                    jsonResponse= jsonArrayResponse.getJSONObject(1);
+                    Log.i("jsontokener", jsonResponse.toString());
+                    Log.i("time", params[1].toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (jsonResponse != null) {
+                    room.is_free = false;
+                    return jsonResponse.toString();
+                }
+                else room.is_free = true;
+                return "IT IS EMPTYYYY";
+
+
+
+
+
+
+
             }
             finally{
                 urlConnection.disconnect();
@@ -75,15 +103,12 @@ public class FindEntries extends AsyncTask<String, Void, String> {
             Log.e("ERROR", e.getMessage(), e);
             return null;
         }
+
     }
 
     protected void onPostExecute(String response) {
-        /* try {
-            JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } */
-        Log.i("INFO", response);
+        if (response != null) Log.i("INFO", response);
+        //Log.i("INFO", object.toString());
         progressBar.setVisibility(View.GONE);
 
     }

@@ -24,10 +24,10 @@ import android.widget.ImageView.ScaleType;
 
 public abstract class Floor extends Fragment implements OnTouchListener {
 
-    public int roomn;
-    public Room[] rooms;     //un piano è un array di stanze
+    protected int roomn;
+    protected Room[] rooms;     //un piano è un array di stanze
 
-    public void showCurrentSituation() {
+    private void showCurrentSituation() {
         /*parte che verrà modularizzata*/
         Date now;
         Date opening;
@@ -36,7 +36,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         int hour = curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
         int minute = curr_date.get(Calendar.MINUTE);
         now = parseDate(hour + ":" + minute);
-
+        updateEntries();
         for (int i=0; i<roomn; i++) {
             opening = parseDate(rooms[i].opening_time);
             closing = parseDate(rooms[i].closing_time);
@@ -45,6 +45,9 @@ public abstract class Floor extends Fragment implements OnTouchListener {
             else
                 rooms[i].red_view.setVisibility(View.VISIBLE);
         }
+
+
+
     }
 
     @Override
@@ -76,7 +79,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         final int evY = (int) event.getY();
         ImageView vm=null;
         switch(v.getId()) {
-            case 10:
+            case 10:  // they go from 10 to \4 because from 0 to 4 is not allowed
                 vm=getView().findViewById(R.id.mask0);
                 break;
             case 11:
@@ -93,7 +96,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
                 break;
             default: break;
         }
-       int floor=v.getId()%10;
+        int floor=v.getId()%10;  //look comment line 80
         Bitmap bitmap=((BitmapDrawable)vm.getDrawable()).getBitmap();
         Bitmap bitmapResized = Bitmap.createScaledBitmap(bitmap, v.getWidth(), v.getHeight(), false);
         int pixel=bitmapResized.getPixel(evX, evY);
@@ -104,10 +107,11 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         //this.rooms[floor].closing_time=""; //ora si possono fare tutte le cose che si vuole :)
         return false;
     }
-    void updateEntries() {
+
+    private void updateEntries() {
         String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
         for (Room room : rooms) {
-            FindEntries query = new FindEntries(getContext());
+            FindEntries query = new FindEntries(getContext(),room);
             query.execute(Integer.toString(room.id), time, time);
         }
     }

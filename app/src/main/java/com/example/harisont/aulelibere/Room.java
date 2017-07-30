@@ -10,15 +10,15 @@ import java.util.Date;
  */
 
 public class Room {
-    int id;
-    String name;
-    boolean is_free;
-    ImageView green_view;
-    ImageView red_view;
-    String opening_time;
-    String closing_time;
+    public int id;
+    protected String name;
+    protected boolean is_free;
+    protected ImageView green_view;
+    protected ImageView red_view;
+    protected String opening_time;
+    protected String closing_time;
 
-    public Room(int id, String name) {
+    protected Room(int id, String name) {
         this.id=id;
         this.name=name;
         this.is_free=true;
@@ -27,7 +27,7 @@ public class Room {
     }
 
     //costruttore da usare per le aule che hanno un orario di apertura/chiusura proprio: biblioteca, laboratori...
-    public Room(int id, String name, String opening_time, String closing_time) {
+    protected Room(int id, String name, String opening_time, String closing_time) {
         this.id=id;
         this.name=name;
         this.is_free=true;
