@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  30 JUL 2017 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.24)  30 JUL 2017 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -503,7 +503,11 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(./documentazione.aux)
+(./documentazione.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `documentazione.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -523,8 +527,7 @@ LaTeX Font Info:    ... okay on input line 19.
 LaTeX Info: Redefining \it@ocap on input line 19.
 LaTeX Info: Redefining \it@ccap on input line 19.
 \AtBeginShipoutBox=\box26
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -603,81 +606,101 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 39.
  [4] [5]
-[6] <casiduso.png, id=117, 1017.8025pt x 517.935pt>
+<class.png, id=113, 1332.98pt x 572.1375pt>
+File: class.png Graphic file (type png)
+ <use class.png>
+Package pdftex.def Info: class.png used on input line 48.
+(pdftex.def)             Requested size: 345.0pt x 148.08002pt.
+ [6 <./class.png>]
+<casiduso.png, id=121, 1017.8025pt x 517.935pt>
 File: casiduso.png Graphic file (type png)
  <use casiduso.png>
-Package pdftex.def Info: casiduso.png used on input line 49.
+Package pdftex.def Info: casiduso.png used on input line 56.
 (pdftex.def)             Requested size: 345.0pt x 175.55815pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--53
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
 
  []
 
-[7 <./casiduso.png>] [8] <stato.png, id=130, 973.6375pt x 255.95625pt>
-File: stato.png Graphic file (type png)
+[7 <./casiduso.png>] <seq.png, id=129, 1020.81375pt x 449.68pt>
+File: seq.png Graphic file (type png)
+ <use seq.png>
+Package pdftex.def Info: seq.png used on input line 63.
+(pdftex.def)             Requested size: 345.0pt x 151.97658pt.
 
-<use stato.png>
-Package pdftex.def Info: stato.png used on input line 59.
+[8 <./seq.png>] <stato.png, id=135, 973.6375pt x 255.95625pt>
+File: stato.png Graphic file (type png)
+ <use stato.png>
+Package pdftex.def Info: stato.png used on input line 71.
 (pdftex.def)             Requested size: 345.0pt x 90.6952pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--63
+Underfull \hbox (badness 10000) in paragraph at lines 69--75
 
  []
 
-[9 <./stato.png>] <attivita.png, id=137, 509.905pt x 538.01pt>
+[9 <./stato.png>] <attivita.png, id=142, 509.905pt x 538.01pt>
 File: attivita.png Graphic file (type png)
 
 <use attivita.png>
-Package pdftex.def Info: attivita.png used on input line 67.
+Package pdftex.def Info: attivita.png used on input line 79.
 (pdftex.def)             Requested size: 345.0pt x 364.0359pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--71
+Underfull \hbox (badness 10000) in paragraph at lines 77--83
 
  []
 
-[10 <./attivita.png>] [11] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+[10 <./attivita.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
+[11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
 
  []
 
 [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  (./documentazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `documentazione.out' has not changed.
 (rerunfilecheck)             Checksum: E3192808D893ACCC3514E963884F1898;880.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 6420 strings out of 494901
- 90003 string characters out of 6179486
- 180004 words of memory out of 5000000
- 9615 multiletter control sequences out of 15000+600000
+ 6433 strings out of 494901
+ 90147 string characters out of 6179486
+ 180133 words of memory out of 5000000
+ 9624 multiletter control sequences out of 15000+600000
  15016 words of font info for 35 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,7n,28p,1100b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,8n,28p,1330b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk> </hom
 e/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/hariso
 nt/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/harisont/.texm
@@ -687,10 +710,10 @@ jfour/jknappen/ec/ecbx1440.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jk
 nappen/ec/ecrm1000.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/e
 c/ecrm1200.600pk> </home/harisont/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm20
 74.600pk>
-Output written on documentazione.pdf (13 pages, 222665 bytes).
+Output written on documentazione.pdf (13 pages, 330986 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 515 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
