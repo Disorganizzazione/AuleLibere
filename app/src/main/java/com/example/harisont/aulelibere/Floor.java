@@ -11,11 +11,11 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Calendar;
+import java.util.concurrent.ExecutionException;
+
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ImageView.ScaleType;
-
 
 
 /**
@@ -103,11 +103,50 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         Bitmap bitmap=((BitmapDrawable)vm.getDrawable()).getBitmap();
         Bitmap bitmapResized = Bitmap.createScaledBitmap(bitmap, v.getWidth(), v.getHeight(), false);
         int pixel=bitmapResized.getPixel(evX, evY);
-        if(pixel==Color.RED) showInfo(0);
-        else if(pixel==Color.GREEN) showInfo(1);
-        else if(pixel==Color.BLUE) showInfo(2);
+       FindWhenIsBusy findWhenisBusy;
+       if(pixel==Color.RED){
+            if(rooms[0].is_free){
+                findWhenisBusy = new FindWhenIsBusy(getContext(), rooms[0]);
+                try {
+                    findWhenisBusy.execute(String.valueOf(System.currentTimeMillis())).get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            showInfo(0);
+        }
+        else if(pixel==Color.GREEN) {
+           if(rooms[0].is_free){
+               findWhenisBusy = new FindWhenIsBusy(getContext(), rooms[1]);
+               try {
+                   findWhenisBusy.execute(String.valueOf(System.currentTimeMillis())).get();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               } catch (ExecutionException e) {
+                   e.printStackTrace();
+               }
+           }
+            showInfo(1);
+        }
+        else if(pixel==Color.BLUE){
+           if(rooms[0].is_free){
+               findWhenisBusy = new FindWhenIsBusy(getContext(), rooms[2]);
+               try {
+                   findWhenisBusy.execute(String.valueOf(System.currentTimeMillis())).get();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               } catch (ExecutionException e) {
+                   e.printStackTrace();
+               }
+           }
+           showInfo(2);
+        }
         else if(pixel==Color.YELLOW) { //special cases
-            if (floor==3) showInfo(3);
+            if (floor==3) {
+                showInfo(3);
+            }
             else showInfo(2);
         }
         return false;
@@ -118,7 +157,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
             Calendar curr_date=Calendar.getInstance();
             int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
             int time=curr_date.get(Calendar.HOUR_OF_DAY);
-            if(weekday!=1 && weekday!=7 && time<=19 && time>=8) { //se l'università è aperta
+            if(weekday!=1 && weekday!=7 && time<=19 && time>=9) { //se l'università è aperta
                 if (this.rooms[0].is_free) {
                     if (this.rooms[0].next_event != null)
                         Toast.makeText(getActivity(), "Quest'aula sarà disponibile fino alle " + this.rooms[r].next_event, Toast.LENGTH_SHORT).show();
@@ -137,8 +176,14 @@ public abstract class Floor extends Fragment implements OnTouchListener {
     private void updateEntries() {
         String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
         for (Room room : rooms) {
-            FindEntries query = new FindEntries(getContext(),room);
-            query.execute(Integer.toString(room.id), time, time);
+            FindLiveEntry query = new FindLiveEntry(getContext(),room);
+            try {
+                query.execute(time).get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
