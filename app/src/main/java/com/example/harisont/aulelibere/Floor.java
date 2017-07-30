@@ -27,14 +27,16 @@ public abstract class Floor extends Fragment implements OnTouchListener {
     protected int roomn;
     protected Room[] rooms;     //un piano è un array di stanze
     long timestamp = 0;
+
     private void showCurrentSituation() {
         /*parte che verrà modularizzata*/
         Date now;
         Date opening;
         Date closing;
         Calendar curr_date = Calendar.getInstance();
-        int hour = curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
-        int minute = curr_date.get(Calendar.MINUTE);
+        int hour=curr_date.get(Calendar.HOUR_OF_DAY); //non posso credere che HOUR_OF_DAY sia diverso da HOUR
+        int minute=curr_date.get(Calendar.MINUTE);
+        int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
         now = parseDate(hour + ":" + minute);
         if((timestamp - System.currentTimeMillis()/1000) > 3600 || timestamp == 0) {
             updateEntries();
@@ -43,14 +45,11 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         for (int i=0; i<roomn; i++) {
             opening = parseDate(rooms[i].opening_time);
             closing = parseDate(rooms[i].closing_time);
-            if (rooms[i].is_free && opening.before(now) && closing.after(now))
+            if (rooms[i].is_free && opening.before(now) && closing.after(now) && weekday!=1 && weekday!=7)
                 rooms[i].green_view.setVisibility(View.VISIBLE);
             else
                 rooms[i].red_view.setVisibility(View.VISIBLE);
         }
-
-
-
     }
 
     @Override
@@ -78,6 +77,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
     }
 
    public boolean onTouch (View v, MotionEvent event) {
+
         final int evX = (int) event.getX();
         final int evY = (int) event.getY();
         ImageView vm=null;
@@ -103,14 +103,37 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         Bitmap bitmap=((BitmapDrawable)vm.getDrawable()).getBitmap();
         Bitmap bitmapResized = Bitmap.createScaledBitmap(bitmap, v.getWidth(), v.getHeight(), false);
         int pixel=bitmapResized.getPixel(evX, evY);
-        if(pixel==Color.RED) Toast.makeText(getActivity(), "Sono l'aula A del piano "+floor, Toast.LENGTH_SHORT).show();
-        else if(pixel==Color.GREEN) Toast.makeText(getActivity(), "Sono l'aula B del piano "+floor, Toast.LENGTH_SHORT).show();
-        else if(pixel==Color.BLUE) Toast.makeText(getActivity(), "Sono l'aula C del piano "+floor, Toast.LENGTH_SHORT).show();
-        else if(pixel==Color.YELLOW) Toast.makeText(getActivity(), "Sono l'aula D del piano "+floor, Toast.LENGTH_SHORT).show();
-        //this.rooms[floor].closing_time=""; //ora si possono fare tutte le cose che si vuole :)
+        if(pixel==Color.RED) showInfo(0);
+        else if(pixel==Color.GREEN) showInfo(1);
+        else if(pixel==Color.BLUE) showInfo(2);
+        else if(pixel==Color.YELLOW) { //special cases
+            if (floor==3) showInfo(3);
+            else showInfo(2);
+        }
         return false;
     }
-
+    private void showInfo(int r) { //r indica la stanza, a seconda del colore sulla maschera
+        {
+            Date now;
+            Calendar curr_date=Calendar.getInstance();
+            int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
+            int time=curr_date.get(Calendar.HOUR_OF_DAY);
+            if(weekday!=1 && weekday!=7 && time<=19 && time>=8) { //se l'università è aperta
+                if (this.rooms[0].is_free) {
+                    if (this.rooms[0].next_event != null)
+                        Toast.makeText(getActivity(), "Quest'aula sarà disponibile fino alle " + this.rooms[r].next_event, Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getActivity(), "Quest'aula rimarrà aperta fino alle " + this.rooms[r].closing_time, Toast.LENGTH_LONG).show();
+                } else {
+                    if (this.rooms[0].next_event != null)
+                        Toast.makeText(getActivity(), "Quest'aula sarà occupata fino alle " + this.rooms[r].next_event, Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getActivity(), "Quest'aula rimarrà chiusa fino alle " + this.rooms[r].closing_time, Toast.LENGTH_LONG).show();
+                }
+            }
+             else Toast.makeText(getActivity(), "L'università è chiusa.", Toast.LENGTH_LONG).show();
+        }
+    }
     private void updateEntries() {
         String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
         for (Room room : rooms) {

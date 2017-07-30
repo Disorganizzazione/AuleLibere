@@ -17,6 +17,7 @@ public class Room {
     protected ImageView red_view;
     protected String opening_time;
     protected String closing_time;
+    protected String next_event;
 
     protected Room(int id, String name) {
         this.id=id;
@@ -24,6 +25,7 @@ public class Room {
         this.is_free=true;
         this.opening_time="08:00";
         this.closing_time="19:00";
+        this.next_event=null;
     }
 
     //costruttore da usare per le aule che hanno un orario di apertura/chiusura proprio: biblioteca, laboratori...
@@ -33,5 +35,6 @@ public class Room {
         this.is_free=true;
         this.opening_time=opening_time;
         this.closing_time=closing_time;
+        this.next_event=null;
     }
 }
