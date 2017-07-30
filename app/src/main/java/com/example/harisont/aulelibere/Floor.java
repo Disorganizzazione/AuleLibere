@@ -14,6 +14,8 @@ import java.util.Calendar;
 import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ImageView.ScaleType;
+
 
 
 /**
@@ -69,7 +71,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         }
     }
 
-    public boolean onTouch (View v, MotionEvent event) {
+   public boolean onTouch (View v, MotionEvent event) {
         final int evX = (int) event.getX();
         final int evY = (int) event.getY();
         ImageView vm=null;
@@ -91,16 +93,14 @@ public abstract class Floor extends Fragment implements OnTouchListener {
                 break;
             default: break;
         }
-        int floor=v.getId()%10;
+       int floor=v.getId()%10;
         Bitmap bitmap=((BitmapDrawable)vm.getDrawable()).getBitmap();
-        int pixel=bitmap.getPixel(evX, evY);
-        int redValue = Color.red(pixel);
-        int blueValue = Color.blue(pixel);
-        int greenValue = Color.green(pixel);
-        if(pixel==Color.RED) Toast.makeText(getActivity(), "Sono l'aula A del piano "+floor, Toast.LENGTH_LONG).show();
-        else if(pixel==Color.GREEN) Toast.makeText(getActivity(), "Sono l'aula B del piano "+floor, Toast.LENGTH_LONG).show();
-        else if(pixel==Color.BLUE) Toast.makeText(getActivity(), "Sono l'aula C del piano "+floor, Toast.LENGTH_LONG).show();
-        else if(pixel==Color.YELLOW) Toast.makeText(getActivity(), "Sono l'aula D del piano "+floor, Toast.LENGTH_LONG).show();
+        Bitmap bitmapResized = Bitmap.createScaledBitmap(bitmap, v.getWidth(), v.getHeight(), false);
+        int pixel=bitmapResized.getPixel(evX, evY);
+        if(pixel==Color.RED) Toast.makeText(getActivity(), "Sono l'aula A del piano "+floor, Toast.LENGTH_SHORT).show();
+        else if(pixel==Color.GREEN) Toast.makeText(getActivity(), "Sono l'aula B del piano "+floor, Toast.LENGTH_SHORT).show();
+        else if(pixel==Color.BLUE) Toast.makeText(getActivity(), "Sono l'aula C del piano "+floor, Toast.LENGTH_SHORT).show();
+        else if(pixel==Color.YELLOW) Toast.makeText(getActivity(), "Sono l'aula D del piano "+floor, Toast.LENGTH_SHORT).show();
         //this.rooms[floor].closing_time=""; //ora si possono fare tutte le cose che si vuole :)
         return false;
     }
