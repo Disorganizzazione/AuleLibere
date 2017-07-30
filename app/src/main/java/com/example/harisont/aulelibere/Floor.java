@@ -158,13 +158,14 @@ public abstract class Floor extends Fragment implements OnTouchListener {
             int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
             int time=curr_date.get(Calendar.HOUR_OF_DAY);
             if(weekday!=1 && weekday!=7 && time<=19 && time>=9) { //se l'università è aperta
-                if (this.rooms[0].is_free) {
-                    if (this.rooms[0].next_event != null)
+                if (this.rooms[r].is_free) {
+                    if (this.rooms[r].next_event != null) {
+                        System.out.println(this.rooms[r].next_event);
                         Toast.makeText(getActivity(), "Quest'aula sarà disponibile fino alle " + this.rooms[r].next_event, Toast.LENGTH_SHORT).show();
-                    else
+                    }else
                         Toast.makeText(getActivity(), "Quest'aula rimarrà aperta fino alle " + this.rooms[r].closing_time, Toast.LENGTH_LONG).show();
                 } else {
-                    if (this.rooms[0].next_event != null)
+                    if (this.rooms[r].next_event != null)
                         Toast.makeText(getActivity(), "Quest'aula sarà occupata fino alle " + this.rooms[r].next_event, Toast.LENGTH_SHORT).show();
                     else
                         Toast.makeText(getActivity(), "Quest'aula rimarrà chiusa fino alle " + this.rooms[r].closing_time, Toast.LENGTH_LONG).show();
