@@ -157,7 +157,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
             Calendar curr_date=Calendar.getInstance();
             int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
             int time=curr_date.get(Calendar.HOUR_OF_DAY);
-            if(weekday!=1 && weekday!=7 && time<=19 && time>=9) { //se l'università è aperta
+            if(weekday!=1 && weekday!=7 && time<=19 && time>=8) { //se l'università è aperta
                 if (this.rooms[r].is_free) {
                     if (this.rooms[r].next_event != null) {
                         System.out.println(this.rooms[r].next_event);
