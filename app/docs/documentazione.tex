@@ -83,7 +83,7 @@
 	\newpage
 	\part{Test funzionali}
 	Particolarmente interessante testare non tanto le vere e proprie interazioni tra utente ed applicazione, che si limitano allo swipe per le transizioni da un frammento a un altro e al tocco di un'aula per la visualizzazione di informazioni aggiuntive, quanto il comportamento dell'applicazione al variare dell'ora e del giorno della settimana. Il programma utilizza in diversi modi la data e l'ora impostate sul telefonino: per determinare se l'università è aperta o chiusa, per decidere se una specifica aula è aperta o chiusa secondo il suo orario -si pensi ad esempio ai laboratori, che hanno un orario differente rispetto a quello degli altri ambienti-, per determinare, in base al risultato delle query, se le aule sono libere od occupate e, soprattutto, per effettuare la query che determina quali aule siano occupate in un dato momento. Indirettamente, in ogni caso, si possono interpretare data ed ora correnti come un input da parte dell'utente (che, peraltro, può effettivamente impostarle a suo piacimento). Potrebbe sembrare, dal momento che una data altro non è che un numero intero positivo (secondi trascorsi dal 1/1/1970) che tutti gli input siano validi. Osserviamo subito però che, per il formato impiegato nel database per indicare i momenti di inizio e fine di una prenotazione (Unix Timestamp) gli input ammissibili sono limitati sia superiormente che inferiormente.
-	Un possibile set di casi di test funzionali è dunque:\\
+	Un possibile set di casi di test funzionali, prendendo in considerazione sistemi Android a 32 bit, è dunque:\\
 	
 \begin{table}[h]
 	\centering
