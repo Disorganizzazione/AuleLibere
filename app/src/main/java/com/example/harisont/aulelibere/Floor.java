@@ -151,7 +151,19 @@ public abstract class Floor extends Fragment implements OnTouchListener {
         }
         return false;
     }
-    private void showInfo(int r) { //r indica la stanza, a seconda del colore sulla maschera
+    private void showInfo(int r) {
+        Date now;
+        Calendar curr_date=Calendar.getInstance();
+        int weekday=curr_date.get(Calendar.DAY_OF_WEEK);
+        int time=curr_date.get(Calendar.HOUR_OF_DAY);
+        if(weekday!=1 && weekday!=7 && time<=19 && time>=8) { //se l'università è aperta
+            Toast.makeText(getActivity(), "Orario di apertura: " + this.rooms[r].opening_time + " - " +this.rooms[r].closing_time, Toast.LENGTH_SHORT).show();
+        }
+        else Toast.makeText(getActivity(), "L'università è chiusa.", Toast.LENGTH_LONG).show();
+
+    }
+
+    /*private void showInfo(int r) { //r indica la stanza, a seconda del colore sulla maschera
         {
             Date now;
             Calendar curr_date=Calendar.getInstance();
@@ -173,7 +185,7 @@ public abstract class Floor extends Fragment implements OnTouchListener {
             }
              else Toast.makeText(getActivity(), "L'università è chiusa.", Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
     private void updateEntries() {
         String time = String.valueOf(System.currentTimeMillis() / 1000); // milliseconds is seconds * 1000
         for (Room room : rooms) {
